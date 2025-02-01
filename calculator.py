@@ -9,34 +9,46 @@ def calculate_nums():
 
         get_nums = input("Enter your calculations. To exit, type 'q'.")
 
-        tokens = get_nums.split('')
+        token = get_nums.split(' ')
 
         if token[0] == "q":
+            print("You are exiting the calculator.")
             break
 
         else:
-            if token[0] == "add":
-                add(float(token[1]), token[2])
+            if token[0] == "+":
+                result = add(float(token[1]), float(token[2]))
+                print(result)
 
-            elif token[0] == "subtract":
-                subtract(float(token[1]), token[2])
+            elif token[0] == "-":
+                result = subtract(float(token[1]), float(token[2]))
+                print(result)
 
-            elif token[0] == "multiply":
-                multiply(float(token[1]), token[2])
+            elif token[0] == "*":
+                result = multiply(float(token[1]), float(token[2]))
+                print(result)
 
-            elif token[0] == "divide":
-                divide(float(token[1]), token[2])
+            elif token[0] == "/":
+                result = divide(float(token[1]), float(token[2]))
+                print(result)
 
             elif token[0] == "square":
-                square(float(token[1]))
+                result = square(float(token[1]))
+                print(result)
 
             elif token[0] == "cube":
-                cube(float(token[1]))
+                result = cube(float(token[1]))
+                print(result)
 
-            elif token[0] == "power":
-                power(float(token[1]), token[2])
+            elif token[0] == "pow":
+                result = power(float(token[1]), float(token[2]))
+                print(result)
             
             elif token[0] == "mod":
-                mod(float(token[1]), token[2])
+                result = mod(float(token[1]), float(token[2]))
+                print(result)
+
+
+    return result
 
 calculate_nums()
